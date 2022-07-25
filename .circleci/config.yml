@@ -118,8 +118,8 @@ jobs:
             aws cloudformation deploy \
               --template-file .circleci/files/backend.yml \
               --tags project=udapeople \
-               --stack-name udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7} \
-               --parameter-overrides ID=${CIRCLE_WORKFLOW_ID:0:7}
+              --stack-name udapeople-backend-${CIRCLE_WORKFLOW_ID:0:7} \
+              --parameter-overrides ID=${CIRCLE_WORKFLOW_ID:0:7}
 
 workflows:
   default:
@@ -140,4 +140,4 @@ workflows:
           context: my_context
           filters:
             branches:
-              only: [test-feature-branch]
+              only: [master]
