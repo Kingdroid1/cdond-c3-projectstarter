@@ -137,6 +137,7 @@ workflows:
           requires: [build-frontend]
       - deploy-infrastructure:
           requires: [test-frontend, test-backend, scan-frontend, scan-backend]
+          context: my_context
           filters:
             branches:
               only: [test-feature-branch]
