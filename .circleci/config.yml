@@ -230,7 +230,7 @@ jobs:
       - run:
           name: Install deps
           command: |
-           apk add --update --no-cache tar gzip nodejs npm aws-cli curl
+           apt-get update && apt-get install -y --no-cache tar gzip nodejs npm aws-cli curl
       - restore_cache:
           keys: [backend-build]
       - attach_workspace:
